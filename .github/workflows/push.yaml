@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - master
+
+env:
+  DOCKER_USER_NAME: ${{ secrets.DOCKER_USER_NAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 jobs:
   push_images:
     name: Push images
