@@ -8,10 +8,19 @@ docker_builder:
     # from https://flutter.dev/docs/development/tools/sdk/releases
     matrix:
     - DOCKER_TAG: latest
-      FLUTTER_VERSION: 3.3.2
+      FLUTTER_VERSION: '3.3.3'
     - DOCKER_TAG: stable
-      FLUTTER_VERSION: 3.3.2
+      FLUTTER_VERSION: '3.3.3'
     - DOCKER_TAG: beta
-      FLUTTER_VERSION: 3.3.0-0.5.pre
+      FLUTTER_VERSION: '3.3.0-0.5.pre'
   build_script: ./build_docker.sh
   push_script: ./push_docker.sh
+
+
+# Steps
+# - Convert this script to Github Actions
+#   => On push to master, push tag to docker hub
+# - Add cron script to check latest flutter version in the channels (stable | beta)
+#    When detect a difference, the script update the workflows with the new tag & open an auto commit pull request.
+#  https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json
+#

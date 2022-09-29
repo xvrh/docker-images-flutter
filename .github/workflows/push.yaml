@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: sh build_docker.sh
-      - run: sh push_docker.sh
+      - run: ./build_docker.sh
+      - run: ./push_docker.sh
