@@ -1,9 +1,9 @@
 # Docker containers for performing Flutter desktop builds
 
-These docker containers are built on containers from [cirrusci](https://hub.docker.com/u/cirrusci) ([cirruslabs](https://github.com/cirruslabs)).
+These docker containers are built on containers from [xavierha](https://hub.docker.com/u/xavierha) ([xavierha](https://github.com/xavierha)).
 
-- linux-dev is just cirrusci/flutter:dev + apt installing the needed utils
-- windows-dev-sdk30-fdev2.3rc is cirrusci/android-sdk:30-windowsservercore-2019 with Visual Studio 16, Flutter dev (2.3rc), and Google Root cert gtsr1 (for future proofing pub get)
+- linux-dev is just xavierha/flutter:dev + apt installing the needed utils
+- windows-dev-sdk30-fdev2.3rc is xavierha/android-sdk:30-windowsservercore-2019 with Visual Studio 16, Flutter dev (2.3rc), and Google Root cert gtsr1 (for future proofing pub get)
 
 These docker containers are both being used with Drone CI to build Flutter desktop apps for Linux and Windows. Simply run `flutter build` with the appropriate OS. These containers should work with any other Docker based automated build system such as Gitlab and others.
 

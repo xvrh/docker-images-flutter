@@ -1,0 +1,14 @@
+name: Check
+on:
+  pull_request:
+  push:
+    branches:
+      - xha/flutter333
+
+jobs:
+  build_images:
+    name: Build images
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: sh build_docker.sh
