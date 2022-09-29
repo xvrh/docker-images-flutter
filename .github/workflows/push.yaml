@@ -1,0 +1,17 @@
+name: Push Docker images
+on:
+  push:
+    branches:
+      - master
+
+env:
+  DOCKER_USER_NAME: ${{ secrets.DOCKER_USER_NAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+jobs:
+  push_images:
+    name: Push images
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./build_docker.sh
+      - run: ./push_docker.sh

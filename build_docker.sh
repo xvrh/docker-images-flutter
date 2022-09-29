@@ -2,13 +2,15 @@
 
 set -e
 
-docker build --cache-from cirrusci/flutter:${FLUTTER_VERSION/+/-} \
-             --tag cirrusci/flutter:${FLUTTER_VERSION/+/-} \
-             --tag cirrusci/flutter:$DOCKER_TAG \
+. ./flutter_version.sh
+
+docker build --cache-from xavierha/flutter:${FLUTTER_VERSION/+/-} \
+             --tag xavierha/flutter:${FLUTTER_VERSION/+/-} \
+             --tag xavierha/flutter:$DOCKER_TAG \
              --build-arg flutter_version=$FLUTTER_VERSION \
              sdk
-#docker build --cache-from cirrusci/flutter:${FLUTTER_VERSION/+/-}-web \
-#             --tag cirrusci/flutter:${FLUTTER_VERSION/+/-}-web \
-#             --tag cirrusci/flutter:$DOCKER_TAG-web \
+#docker build --cache-from xavierha/flutter:${FLUTTER_VERSION/+/-}-web \
+#             --tag xavierha/flutter:${FLUTTER_VERSION/+/-}-web \
+#             --tag xavierha/flutter:$DOCKER_TAG-web \
 #             --build-arg flutter_tag=${FLUTTER_VERSION/+/-} \
 #             web
