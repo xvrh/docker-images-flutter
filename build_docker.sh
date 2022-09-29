@@ -2,7 +2,7 @@
 
 set -e
 
-source flutter_version.sh
+. ./flutter_version.sh
 
 docker build --cache-from xavierha/flutter:${FLUTTER_VERSION/+/-} \
              --tag xavierha/flutter:${FLUTTER_VERSION/+/-} \

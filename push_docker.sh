@@ -2,7 +2,7 @@
 
 set -e
 
-source flutter_version.sh
+. ./flutter_version.sh
 
 docker history xavierha/flutter:${FLUTTER_VERSION/+/-}
 docker history xavierha/flutter:$DOCKER_TAG
